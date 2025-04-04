@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>사증발급인정신청 안내문</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap');
+        
+        :root {
+            /* 조금 더 부드러운 색상 팔레트로 조정 */
+            --primary-color: #34495e; /* 조금 더 연한 네이비 */
+            --secondary-color: #3498db; /* 기존 유지 (밝은 파랑) */
+            --accent-color: #e74c3c; /* 기존 유지 (빨강) */
+            --light-color: #f8f9f9; /* 약간 더 밝은 회색 */
+            --dark-color: #2c3e50; /* 기존 유지 (진한 네이비/회색) */
+            --text-color: #333;
+            --border-color: #e0e0e0;
+            --border-radius: 8px;
+            --shadow: 0 5px 15px rgba(0, 0, 0, 0.08); /* 약간 부드러운 그림자 */
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Noto Sans KR', sans-serif;
+            line-height: 1.7; /* 가독성을 위해 줄 간격 약간 늘림 */
+            color: var(--text-color);
+            background-color: #f4f7f6; /* 본문 배경색 약간 조정 */
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 850px; /* 너비 약간 증가 */
+            margin: 30px auto; /* 상하 마진 추가 */
+            background-color: white;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            overflow: hidden;
+        }
+        
+        header {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color)); /* 그라데이션 배경 */
+            color: white;
+            padding: 30px 35px; /* 패딩 증가 */
+            text-align: center;
+            border-bottom: 5px solid var(--secondary-color);
+        }
+        
+        header h1 {
+            font-size: 2rem; /* 32px */
+            margin-bottom: 5px;
+            font-weight: 700;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.2); /* 텍스트 그림자 추가 */
+        }
+        
+        .content {
+            padding: 35px 40px; /* 내부 패딩 증가 */
+        }
+        
+        .intro {
+            background-color: var(--light-color);
+            padding: 25px; /* 패딩 증가 */
+            border-radius: var(--border-radius);
+            margin-bottom: 30px;
+            border-left: 5px solid var(--secondary-color);
+            font-size: 1.05em; /* 약간 큰 폰트 */
+        }
+        
+        h2 {
+            color: var(--primary-color); /* 제목 색상 변경 */
+            margin: 30px 0 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--secondary-color); /* 구분선 색상 변경 */
+            font-weight: 600; /* 약간 더 두껍게 */
+            font-size: 1.6em; /* 폰트 크기 증가 */
+        }
+        
+        ul {
+            list-style-type: none;
+            margin: 20px 0;
+        }
+        
+        li {
+            position: relative;
+            padding: 10px 0 10px 35px; /* 패딩 조정 */
+            margin-bottom: 10px; /* 목록 간 간격 증가 */
+            border-bottom: 1px dashed var(--border-color); /* 구분선 추가 */
+        }
+        li:last-child {
+            border-bottom: none; /* 마지막 항목 구분선 제거 */
+        }
+        
+        li:before {
+            content: "✓"; /* 체크 마크 아이콘으로 변경 */
+            position: absolute;
+            left: 5px;
+            top: 10px; /* 위치 조정 */
+            color: var(--secondary-color);
+            font-weight: bold;
+            font-size: 1.2em;
+        }
+        
+        .highlight { /* 기존 highlight는 그대로 두되, 다른 용도로 사용될 수 있음 */
+            color: var(--secondary-color); /* 파란색 강조로 변경 */
+            font-weight: 500;
+        }
+
+        .red-text { /* "(양식 첨부)" 를 위한 새 클래스 */
+            color: var(--accent-color); /* 빨간색 */
+            font-weight: 500;
+        }
+        
+        .note {
+            font-size: 0.9em; /* 14.4px */
+            color: #555;
+            font-style: italic;
+            margin-top: 8px;
+            padding-left: 35px; /* 아이콘과 맞춤 */
+        }
+        
+        .document-section {
+            background-color: white;
+            border: 1px solid var(--border-color);
+            border-radius: var(--border-radius);
+            padding: 25px 30px; /* 패딩 증가 */
+            margin-bottom: 25px;
+            box-shadow: 0 3px 8px rgba(0,0,0,0.06); /* 약간의 내부 그림자 */
+        }
+        
+        .document-section h3 {
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            font-size: 1.3em; /* 20.8px */
+            display: flex;
+            align-items: center;
+        }
+
+        .document-section h3:before { /* 아이콘 추가 */
+            content: "📄";
+            margin-right: 10px;
+            font-size: 1.2em;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 25px;
+            background-color: var(--dark-color); /* 어두운 배경 */
+            color: var(--light-color); /* 밝은 텍스트 */
+            font-size: 0.9em;
+            margin-top: 30px; /* 위쪽 여백 추가 */
+        }
+        
+        /* 반응형 디자인 */
+        @media (max-width: 768px) {
+            body {
+                padding: 0; /* 모바일에서는 body 패딩 제거 */
+            }
+            .container {
+                width: 100%;
+                margin: 0;
+                border-radius: 0;
+                box-shadow: none;
+            }
+            
+            header {
+                padding: 20px 25px;
+                border-radius: 0; /* 모바일에서는 헤더 둥근 모서리 제거 */
+            }
+            header h1 {
+                font-size: 1.7em; /* 모바일 헤더 폰트 크기 조정 */
+            }
+            
+            .content {
+                padding: 25px 20px; /* 모바일 콘텐츠 패딩 조정 */
+            }
+
+            .intro {
+                padding: 20px;
+                font-size: 1em;
+            }
+
+            h2 {
+                font-size: 1.4em;
+            }
+
+            .document-section {
+                padding: 20px;
+            }
+
+            .document-section h3 {
+                font-size: 1.2em;
+            }
+
+            li {
+                padding-left: 30px; /* 모바일 리스트 패딩 조정 */
+            }
+            li:before {
+                left: 0;
+            }
+
+            .note {
+                 padding-left: 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>사증발급인정신청 안내문</h1>
+        </header>
+        
+        <div class="content">
+            <div class="intro">
+                <p>원어민강사가 보내드린 비자 수속용 서류와 학교 측이 준비해야 하는 아래와 같은 서류를 갖추어 <span class="highlight">출입국사무소</span>에 방문하여 <span class="highlight">비자발급인정 신청</span>을 하셔야 합니다. 여기 안내하는 서류는 가장 일반적인 서류 목록이며, 간혹 새로 개원하거나 처음 원어민을 고용하는 학원에 대해서는 추가 서류를 요청하는 출입국 담당자들이 있습니다. 접수 완료 후 제게 접수 번호를 알려주시면 제가 온라인으로 수시로 진행 상황 확인하겠습니다.</p>
+            </div>
+            
+            <div class="document-section">
+                <h3>학교측 준비서류</h3>
+                <ul>
+                    <li>사증발급인정신청서 (<span class="red-text">양식 첨부</span>, 5 페이지에 서명란이 있습니다. 초청인 정보와 행정정보 공동이용동의서 란이니 꼭 학원에서 서명하셔야 합니다. 강사가 일부 작성하여 보내드린 양식의 빈칸을 마저 채워 완성 후 제출)</li>
+                    <li>사업자등록증 (고유번호증) 사본</li>
+                    <li>고용계약서 원본과 복사본</li>
+                    <li>학원설립운영증 복사본 (공공기관 면제)</li>
+                    <li>강사시간표 (임의의 양식으로 강사 시간표를 작성)</li> 
+                    <li>강사활용계획서 (<span class="red-text">양식 첨부</span>)</li>
+                    <li>대표자 신분증 복사본</li>
+                </ul>
+            </div>
+            
+            <div class="document-section">
+                <h3>강사측 준비서류</h3>
+                <ul>
+                    <li>강사의 여권사본 (첨부)</li>
+                    <li>강사의 여권용 사진1장 (3.5 x 4.5 cm)</li>
+                    <li>강사 이력서 (첨부)</li>
+                    <li>자가건강진단서 (첨부)</li>
+                    <li>학위증 (SAQA) (+아포스티유)</li>
+                    <li>범죄조회서 (+아포스티유)</li>
+                </ul>
+            </div>
+        </div>
+        
+        <footer>
+            <p>Kang & Kriel Recruitment</p> </footer>
+    </div>
+</body>
+</html>
